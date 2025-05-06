@@ -7,7 +7,7 @@ const testimonials = [
     title: "Restaurant & Café",
     quote:
       "Campaign setup was fast and transparent. We connected with 12+ influencers within days.",
-    avatar: "/public/zehra.jpg",
+    avatar: "/images/zehra.jpg",
     gradient: "from-rose-600 to-orange-600",
     accentColor: "bg-rose-100",
   },
@@ -16,7 +16,7 @@ const testimonials = [
     title: "Food Vlogger, Creator",
     quote:
       "Partnering with regional brands has never been easier. The platform is sleek and the experience feels premium.",
-    avatar: "/public/Imtiyaz Hussain.jpg",
+    avatar: "/images/Imtiyaz Hussain.jpg",
     gradient: "from-emerald-600 to-teal-600",
     accentColor: "bg-emerald-100",
   },
@@ -25,7 +25,7 @@ const testimonials = [
     title: "Creator",
     quote:
       "Udaan Sathi gave me direct access to brand deals I genuinely connect with. It feels like creators finally have a platform built for us.",
-    avatar: "/public/AfreenKhan.jpg",
+    avatar: "/images/AfreenKhan.jpg",
     gradient: "from-emerald-600 to-teal-600",
     accentColor: "bg-emerald-100",
   },
@@ -34,7 +34,7 @@ const testimonials = [
     title: "Vlogger, Creator",
     quote:
       "Udaan Sathi bridges the gap between creators and brands beautifully. Every collaboration feels aligned and truly meaningful.",
-    avatar: "/public/MubinYTVlogs.jpg",
+    avatar: "/images/MubinYTVlogs.jpg",
     gradient: "from-blue-600 to-indigo-600",
     accentColor: "bg-blue-100",
   },

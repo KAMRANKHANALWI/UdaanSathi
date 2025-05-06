@@ -45,7 +45,7 @@ const Header = () => {
         {/* Logo */}
         <NavLink to="/" className="flex items-center">
           <img
-            src="/public/logo3.png"
+            src="/images/Logo3.jpg"
             className="h-12"
             alt="Udaan Sathi Logo"
           />

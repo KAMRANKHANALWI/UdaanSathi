@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="footer-logo-container">
               <Link to="/" className="flex items-center mb-4">
                 <img
-                  src="/public/logo3.png"
+                  src="/images/Logo3.jpg"
                   className="h-14"
                   alt="Udaan Sathi Logo"
                 />
