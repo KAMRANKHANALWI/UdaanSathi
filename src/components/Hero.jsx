@@ -18,8 +18,8 @@ const Hero = () => {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-20">
-        <div className="flex items-center justify-center mb-6">
-          <span className="px-4 py-2 text-sm font-medium text-purple-200 bg-gray-900/60 border border-gray-800/50 rounded-full flex items-center">
+        <div className="flex items-center justify-center mb-4 sm:mb-6 mt-12 sm:mt-6">
+          <span className="px-4 py-2 text-sm font-medium text-purple-200 bg-gray-900/60 border border-gray-800/50 rounded-full flex items-center text-center">
             <Sparkles size={14} className="mr-2 text-purple-300" />
             Connecting Brands with India's Top Creators
           </span>
