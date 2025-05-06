@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 const creators = [
   {
     name: "Tanya Khanijow",
-    videoSrc: "/videos/TanyaKhanijow.mp4",
+    videoSrc: "/public/videos/TanyaKhanijow.mp4",
     rating: 5.0,
     location: "Delhi, IN",
     platform: "Instagram",
@@ -12,7 +12,7 @@ const creators = [
   },
   {
     name: "Bhavna Vyas",
-    videoSrc: "/videos/BhavnaVyas.mp4",
+    videoSrc: "/public/videos/BhavnaVyas.mp4",
     rating: 5.0,
     location: "Delhi, IN",
     platform: "Instagram",
@@ -21,7 +21,7 @@ const creators = [
   },
   {
     name: "Afreen Khan",
-    videoSrc: "/videos/AfreenKhan.mp4",
+    videoSrc: "/public/videos/AfreenKhan.mp4",
     rating: 4.9,
     location: "Mumbai, IN",
     platform: "YouTube",
@@ -30,7 +30,7 @@ const creators = [
   },
   {
     name: "Imtiyaz Hussain",
-    videoSrc: "/videos/ImtiyazHussain.mp4",
+    videoSrc: "/public/videos/ImtiyazHussain.mp4",
     rating: 4.8,
     location: "Bangalore, IN",
     platform: "TikTok",
@@ -39,7 +39,7 @@ const creators = [
   },
   {
     name: "Foodies Delhi",
-    videoSrc: "/videos/foodies_delhi.mp4",
+    videoSrc: "/public/videos/foodies_delhi.mp4",
     rating: 5.0,
     location: "Lucknow, IN",
     platform: "Instagram",
@@ -48,7 +48,7 @@ const creators = [
   },
   {
     name: "MubinYT Vlogs",
-    videoSrc: "/videos/mubinytvlogs.mp4",
+    videoSrc: "/public/videos/mubinytvlogs.mp4",
     rating: 5.0,
     location: "Chennai, IN",
     platform: "Instagram",
@@ -57,7 +57,7 @@ const creators = [
   },
   {
     name: "Radhika",
-    videoSrc: "/videos/radhika.mp4",
+    videoSrc: "/public/videos/radhika.mp4",
     rating: 5.0,
     location: "Chennai, IN",
     platform: "Instagram",
@@ -66,7 +66,7 @@ const creators = [
   },
   {
     name: "Umra Urooj",
-    videoSrc: "/videos/umra_urooj.mp4",
+    videoSrc: "/public/videos/umra_urooj.mp4",
     rating: 5.0,
     location: "Chennai, IN",
     platform: "Instagram",
@@ -77,34 +77,39 @@ const creators = [
 
 const VideoCard = ({ creator, videoRef, index }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   return (
     <div
       className="relative h-full rounded-2xl overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => setShowDetails(!showDetails)}
     >
+      {/* Video */}
       <video
         ref={videoRef}
+        src={creator.videoSrc}
         muted
-        autoPlay
-        playsInline
         loop
+        playsInline
         className="h-full w-full object-cover"
-        onError={() =>
-          console.error("❌ Failed to load video:", creator.videoSrc)
-        }
-      >
-        <source src={creator.videoSrc} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      />
 
+      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70"></div>
 
+      {/* Branding */}
+      {/* <div className="absolute top-3 left-0 right-0 px-3 flex justify-between items-center">
+        <div className="text-white font-bold text-lg">{creator.name}</div>
+      </div> */}
+
+      {/* Creator name and rating always visible */}
       <div className="absolute bottom-3 left-0 right-0 px-3 flex justify-between items-center">
         <h3 className="text-white font-medium text-sm">{creator.name}</h3>
       </div>
 
+      {/* Play button overlay on hover */}
       {isHovered && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-black/30 rounded-full p-2 opacity-75">
@@ -121,6 +126,24 @@ const VideoCard = ({ creator, videoRef, index }) => {
     </div>
   );
 };
+
+// Add scrollbar styling to global CSS or as a style tag
+const scrollbarStyles = `
+  /* Hide default scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* For touch scrolling */
+  .touch-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+`;
 
 const Marketplace = () => {
   const videoRefs = useRef([]);
@@ -139,7 +162,7 @@ const Marketplace = () => {
         if (entry.isIntersecting) {
           entry.target
             .play()
-            .catch((err) => console.log("Autoplay blocked:", err));
+            .catch((err) => console.log("Autoplay prevented:", err));
         } else {
           entry.target.pause();
         }
@@ -157,6 +180,7 @@ const Marketplace = () => {
     };
   }, []);
 
+  // Scroll functions
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: -300, behavior: "smooth" });
@@ -169,6 +193,7 @@ const Marketplace = () => {
     }
   };
 
+  // Track scroll position for showing/hiding buttons
   const handleScroll = () => {
     if (scrollContainerRef.current) {
       setScrollPosition(scrollContainerRef.current.scrollLeft);
@@ -177,18 +202,7 @@ const Marketplace = () => {
 
   return (
     <section id="marketplace" className="py-16 px-4 md:px-6 bg-black">
-      <style>{`
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .touch-scroll {
-          -webkit-overflow-scrolling: touch;
-        }
-      `}</style>
+      <style>{scrollbarStyles}</style>
 
       <div className="max-w-6xl mx-auto mb-6">
         <div className="flex items-center justify-between">
@@ -201,7 +215,9 @@ const Marketplace = () => {
         </div>
       </div>
 
+      {/* Scrollable container with navigation buttons */}
       <div className="max-w-6xl mx-auto relative">
+        {/* Left scroll button - only show if not at start */}
         {scrollPosition > 10 && (
           <button
             onClick={scrollLeft}
@@ -225,6 +241,7 @@ const Marketplace = () => {
           </button>
         )}
 
+        {/* Right scroll button */}
         <button
           onClick={scrollRight}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white rounded-full p-2 mr-2"
@@ -246,6 +263,7 @@ const Marketplace = () => {
           </svg>
         </button>
 
+        {/* The scrollable container */}
         <div
           ref={scrollContainerRef}
           className="flex overflow-x-auto gap-6 no-scrollbar touch-scroll scroll-smooth pb-4"
@@ -265,6 +283,7 @@ const Marketplace = () => {
           ))}
         </div>
 
+        {/* Optional: Scroll indicator dots */}
         <div className="flex justify-center mt-4 gap-2">
           {creators.map((_, i) => (
             <button

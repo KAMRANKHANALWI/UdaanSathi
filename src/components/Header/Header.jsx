@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-4 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-2 transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
