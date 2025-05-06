@@ -49,7 +49,7 @@ const Header = () => {
         {/* Logo */}
         <a href="/" className="flex items-center">
           <img
-            src="/public/images/Logo3.jpg"
+            src="/images/Logo3.jpg"
             className="h-8 sm:h-10"
             alt="Udaan Sathi Logo"
           />
