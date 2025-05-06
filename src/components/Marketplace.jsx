@@ -57,7 +57,7 @@ const creators = [
   },
   {
     name: "Radhika",
-    videoSrc: "/videos/Radhika.mp4",
+    videoSrc: "/videos/radhika.mp4",
     rating: 5.0,
     location: "Chennai, IN",
     platform: "Instagram",
