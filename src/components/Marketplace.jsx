@@ -39,7 +39,7 @@ const creators = [
   },
   {
     name: "Foodies Delhi",
-    videoSrc: "/videos/foodies_delhi.mp4",
+    videoSrc: "/public/videos/foodies__delhi.mp4",
     rating: 5.0,
     location: "Lucknow, IN",
     platform: "Instagram",
