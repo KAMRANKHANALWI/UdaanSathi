@@ -37,11 +37,11 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-2  transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-6 transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-8 flex justify-between items-center mt-4 mx-6 py-4 bg-gray-950/80 backdrop-blur-xl border border-gray-800/30 rounded-full shadow-md">
+      <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center mt-4 mx-6 py-4 bg-gray-950/80 backdrop-blur-xl border border-gray-800/30 rounded-full shadow-md">
         {/* Logo */}
         <NavLink to="/" className="flex items-center">
           <img
