@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 const creators = [
   {
     name: "Tanya Khanijow",
-    videoSrc: "/public/videos/TanyaKhanijow.mp4",
+    videoSrc: "/videos/TanyaKhanijow.mp4",
     rating: 5.0,
     location: "Delhi, IN",
     platform: "Instagram",
@@ -12,7 +12,7 @@ const creators = [
   },
   {
     name: "Bhavna Vyas",
-    videoSrc: "/public/videos/BhavnaVyas.mp4",
+    videoSrc: "/videos/BhavnaVyas.mp4",
     rating: 5.0,
     location: "Delhi, IN",
     platform: "Instagram",
@@ -21,7 +21,7 @@ const creators = [
   },
   {
     name: "Afreen Khan",
-    videoSrc: "/public/videos/AfreenKhan.mp4",
+    videoSrc: "/videos/AfreenKhan.mp4",
     rating: 4.9,
     location: "Mumbai, IN",
     platform: "YouTube",
@@ -30,7 +30,7 @@ const creators = [
   },
   {
     name: "Imtiyaz Hussain",
-    videoSrc: "/public/videos/ImtiyazHussain.mp4",
+    videoSrc: "/videos/ImtiyazHussain.mp4",
     rating: 4.8,
     location: "Bangalore, IN",
     platform: "TikTok",
@@ -39,7 +39,7 @@ const creators = [
   },
   {
     name: "Foodies Delhi",
-    videoSrc: "/public/videos/foodies_delhi.mp4",
+    videoSrc: "/videos/foodies_delhi.mp4",
     rating: 5.0,
     location: "Lucknow, IN",
     platform: "Instagram",
@@ -48,7 +48,7 @@ const creators = [
   },
   {
     name: "MubinYT Vlogs",
-    videoSrc: "/public/videos/mubinytvlogs.mp4",
+    videoSrc: "/videos/mubinytvlogs.mp4",
     rating: 5.0,
     location: "Chennai, IN",
     platform: "Instagram",
@@ -57,7 +57,7 @@ const creators = [
   },
   {
     name: "Radhika",
-    videoSrc: "/public/videos/radhika.mp4",
+    videoSrc: "/videos/radhika.mp4",
     rating: 5.0,
     location: "Chennai, IN",
     platform: "Instagram",
@@ -66,7 +66,7 @@ const creators = [
   },
   {
     name: "Umra Urooj",
-    videoSrc: "/public/videos/umra_urooj.mp4",
+    videoSrc: "/videos/umra_urooj.mp4",
     rating: 5.0,
     location: "Chennai, IN",
     platform: "Instagram",
